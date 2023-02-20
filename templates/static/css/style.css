@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Pridi:wght@300&display=swap');
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+body {
+    background-color: var(--verdeClaro);
+    color: var(--cinzaEscuro);
+    scroll-behavior: smooth;
+}
+
+:root{
+    --verde:#5EE7A8;
+    --verdeClaro: #D5F7E7;
+    --cinzaEscuro: #5c5757;
+    --cinzaClaro: #efecec;
+}
+
+@keyframes stretch {
+    0% {
+        font-size: 2em;
+    }
+
+    50% {
+        font-size: 1.5em;
+
+    }
+
+    100% {
+        font-size: 2.5em;
+
+    }
+}
+
+.navbar {
+    display: flex;
+}
+
+.logo {
+    margin: 20px;
+    flex: 30%;
+    cursor: pointer;
+}
+
+.menu {
+    margin: 20px;
+    font-size: 1.5rem;
+}
+
+.menu a:hover{
+    color: var(--verde);
+}
+
+.content {
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+}
+
+.c{
+    background-image: linear-gradient(to right, var(--verdeClaro), var(--verde));
+    justify-content: flex-start;
+    flex: 30%;
+    position: relative;
+    right: 450px;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    cursor:default;
+}
+
+.title{
+    top: 150px;
+    margin-left: 30px;
+
+}
+
+.subtitle{
+    top: 170px;
+    margin-left: 45px;
+}
+
+.cv{
+    background: none;
+    cursor: pointer;
+    top: 220px;
+   
+}
+
+.cv:hover{
+    animation-name: stretch;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.imagem-inicial {
+    position: relative;
+    width: 80vh;
+    height: fit-content;
+    bottom: 50px;
+    left: 50px;
+}
+
+.imagem-inicial img {
+    align-self:flex-end;
+}
+
+.sobreMim, .projetos {
+    flex: 90%;
+    width: 85vh;
+    height: fit-content;
+    font-size: 1.5rem;
+}
+
+.sobreMim h1, .projetos h1, .contatos h1 {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    border-bottom: 1px solid var(--verde);
+    padding: 10px;
+    width: 200px;
+}
+
+.tecnical{
+    position: relative;
+    bottom: 280px;
+    left: 150px;
+    width: 350px;
+}
+
+.skills{
+
+    align-items: center;
+    justify-content: center;
+}
+.skills img{
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 2px 3px var(--verde));
+}
+
+.bloco{
+    background-color: var(--verdeClaro);
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+}
+
+.conteudo{
+    background-color: #efecec;
+}
+
+.card{
+    flex: 30%;
+    max-width: 420px;
+    max-height:450px;
+    background-color: white;
+    border: 1px solid var(--verde);
+    box-shadow: 1px 1px 15px var(--cinzaEscuro);
+    margin: 10px 10px;
+
+}
+
+.card h1{
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.card p{
+    margin: 5px;
+    text-align: justify;
+    word-break:break-all;
+}
+
+.card button{
+    margin: 5px;
+    padding: 10px;
+    border:1px solid black;
+    color: black;
+}
+
+.card button:hover{
+    transition: all 0.5s ease-in-out;
+    border: none;
+    background-color: black;
+    color: var(--verdeClaro);
+}
+
+.contatos{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    height: 250px;
+    font-size: 1.5em;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.socialMedia{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin-left: 20px;
+}
+
+.socialMedia a{
+    padding: 10px;
+    min-width: 120px;
+    border-radius: 5px;
+}
+
+.socialMedia a:hover{
+    background-image:linear-gradient(to right, var(--verdeClaro), var(--verde));
+}
+
+.back-to-top{
+    position: fixed;
+    top:90%;
+    right:15px;
+    cursor: pointer;
+}
+
+footer{
+
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
