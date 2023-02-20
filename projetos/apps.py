@@ -1,3 +1,5 @@
+import random
+import string
 from django.apps import AppConfig
 from django.contrib.auth import get_user_model
 
@@ -14,5 +16,8 @@ class ProjetosConfig(AppConfig):
         email= os.getenv("EMAIL_ADMIN")
         senha = os.getenv("SENHA_ADMIN")
 
-        if not User.objects.filter(email=email).exists():
-            User.objects.create_superuser(username='admin', email=email, password=senha, is_active=True, is_staff=True)
+        usuarios = User.objects.filter(email=email)
+
+        if not usuarios:
+            username = 'admin-' + ''.join(random.choices(string.ascii_lowercase, k=5))
+            User.objects.create_superuser(username=username, email=email, password=senha, is_active=True, is_staff=True)
