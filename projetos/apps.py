@@ -7,12 +7,6 @@ class ProjetosConfig(AppConfig):
     name = 'projetos'
 
     def ready(self):
-        import os
         User = get_user_model()
-
-        email = os.getenv("EMAIL_ADMIN")
-        senha = os.getenv("SENHA_ADMIN")
-
-        usuarios = User.objects.filter(email=email)
-        if not usuarios:
-            User.objects.create_superuser(username="admin", email=email, senha=senha, is_active=True, is_staff=True)
+        if not User.objects.filter(username='admin').exists():
+            User.objects.create_superuser('admin', 'admin@example.com', 'password')
