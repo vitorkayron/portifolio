@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+from django.contrib.auth import get_user_model
 
 
 
@@ -8,13 +9,17 @@ class ProjetosConfig(AppConfig):
     name = 'projetos'
 
     def ready(self):
-        from django.contrib.auth.models import User
         import os
+
+        User = get_user_model()
 
         email= os.getenv("EMAIL_ADMIN")
         senha = os.getenv("SENHA_ADMIN")
+        
 
-        usuarios = User.objects.filter(is_superuser=True).values_list('email')
+        usuarios = User.objects.filter(email=email)
+
 
         if not usuarios:
-            User.objects.create_superuser(username='admin', email=email, password=senha, is_active=True, is_staff=True)
+            User.objects.create_superuser(username='eu nao sei meu nome', email=email, password=senha, is_staff=True)
+
